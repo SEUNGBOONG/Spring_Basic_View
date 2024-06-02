@@ -1,6 +1,6 @@
 package model;
 
 public interface MemberRepository {
-    void Save(Member member);
+    void save(Member member);
     Member findById(Long memberId);
 }
