@@ -2,6 +2,7 @@ package com.example.demo.order;
 
 import Discount.DiscountPolicy;
 import Discount.FixDiscountPolicy;
+import Discount.RateDiscountPolicy;
 import model.Member;
 import model.MemberRepository;
 import model.MemoryMemberRepository;
@@ -9,7 +10,8 @@ import model.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
 
     @Override
     public Order createOrder(final Long memberId, final String itemName, final int itemPrice) {
