@@ -1,6 +1,8 @@
 package com.example.demo;
 
+import Discount.DiscountPolicy;
 import Discount.FixDiscountPolicy;
+import Discount.RateDiscountPolicy;
 import com.example.demo.order.OrderService;
 import com.example.demo.order.OrderServiceImpl;
 
@@ -19,6 +21,14 @@ public class AppConfig {
     }
 
     public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), new FixDiscountPolicy());
+        return new OrderServiceImpl(
+                memberRepository(),
+                discountPolicy());
     }
+
+    public DiscountPolicy discountPolicy() {
+//        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
+    }
+
 }
