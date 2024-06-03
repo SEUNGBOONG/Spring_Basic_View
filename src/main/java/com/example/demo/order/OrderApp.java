@@ -1,14 +1,15 @@
 package com.example.demo.order;
 
+import com.example.demo.AppConfig;
 import model.Grade;
 import model.Member;
 import model.MemberService;
-import model.MemberServiceImpl;
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member memberA = new Member(memberId, "memberA", Grade.VIP);
