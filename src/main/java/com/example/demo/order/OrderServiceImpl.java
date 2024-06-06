@@ -13,7 +13,6 @@ public class OrderServiceImpl implements OrderService {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
-
     @Override
     public Order createOrder(final Long memberId, final String itemName, final int itemPrice) {
         Member member = memberRepository.findById(memberId);
