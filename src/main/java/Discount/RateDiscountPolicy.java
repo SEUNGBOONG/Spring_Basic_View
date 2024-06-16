@@ -5,7 +5,7 @@ import model.Member;
 
 public class RateDiscountPolicy implements DiscountPolicy {
 
-    private int percent;
+    private int percent=1;
 
     @Override
     public int discount(final Member member, final int price) {

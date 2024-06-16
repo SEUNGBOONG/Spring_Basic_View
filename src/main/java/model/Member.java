@@ -1,9 +1,9 @@
 package model;
 
 public class Member {
-    private Long id;
-    private String name;
-    private Grade grade;
+    private final Long id;
+    private final String name;
+    private final Grade grade;
 
     public Long getId() {
         return id;
